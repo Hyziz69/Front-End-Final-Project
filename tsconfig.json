@@ -27,7 +27,9 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "tailwind.config.js"
+    "tailwind.config.js",
+    "app/components/sections/sub/Headphones.jsx",
+    "app/components/sections/sub/Headphones.jsx"
   ],
   "exclude": ["node_modules"]
 }

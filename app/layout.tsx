@@ -23,7 +23,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="antialiased">
-      <body className="font-body">{children}</body>
+      <body className="font-body overflow-x-hidden bg-[#050506]">
+        {children}
+      </body>
     </html>
   );
 }

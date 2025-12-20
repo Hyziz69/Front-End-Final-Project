@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import NavLink from "../elements/NavLink";
-import Button from "../elements/Button";
+import NavButton from "../elements/NavButton";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -21,8 +21,17 @@ const Navbar = () => {
         </div>
 
         {/* Sign Up button (desktop only) */}
-        <div className="hidden md:block text-[#FDD90B]">
-          <Button text="Sign up" />
+        <div className="hidden md:block">
+          <NavButton
+            text="Log in"
+            primaryColor="#FFFFFF"
+            secondaryColor="#1A1A1A"
+          />
+          <NavButton
+            text="Sign up"
+            primaryColor="#FDD90B"
+            secondaryColor="#000000"
+          />
         </div>
 
         {/* Burger Icon (mobile) */}
@@ -41,7 +50,8 @@ const Navbar = () => {
           <NavLink destination="About" />
           <NavLink destination="Features" />
           <NavLink destination="Pricing" />
-          <button className="bg-gradient-to-r from-indigo-500 to-blue-600 px-5 py-2 rounded-lg font-medium hover:opacity-90 transition">
+
+          <button className="bg-[#FDD90B] px-5 py-2 rounded-lg font-medium hover:opacity-90 transition text-black">
             Sign Up
           </button>
         </div>

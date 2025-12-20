@@ -1,0 +1,24 @@
+{
+  "features": [
+    {
+      "id": 0,
+      "title": "High-Fidelity Sound",
+      "description": "Experience ultra-clear, distortion-free acoustics that reveal every detail exactly as the artist intended."
+    },
+    {
+      "id": 1,
+      "title": "Active Noise Cancellation",
+      "description": "Block out distractions with advanced isolation technology that adapts to your environment for uninterrupted focus."
+    },
+    {
+      "id": 2,
+      "title": "All-Day Comfort",
+      "description": "Lightweight materials, breathable ear cushions, and ergonomic design let you enjoy up to 36 hours of listening with zero fatigue."
+    },
+    {
+      "id": 3,
+      "title": "Premium Build Quality",
+      "description": "Crafted with reinforced metal components, soft-touch surfaces, and precision engineering for durability that feels luxurious."
+    }
+  ]
+}

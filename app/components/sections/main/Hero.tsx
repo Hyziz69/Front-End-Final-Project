@@ -3,7 +3,7 @@ import HeroText from "../sub/HeroText";
 
 const Hero = () => {
   return (
-    <section className="w-full min-h-screen relative bg-[#050506] flex justify-center items-center lg:flex-row sm:flex-col">
+    <section className="w-full max-w-screen h-screen max-h-[800px] relative bg-[#050506] sm:px-10 sm:py-15 flex justify-center items-center flex-col-reverse md:flex-row ">
       <HeroText />
       <Headphones />
     </section>

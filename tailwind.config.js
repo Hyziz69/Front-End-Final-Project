@@ -7,6 +7,10 @@ export default {
         body: ["Poppins", "sans-serif"],
         heading: ["Orbitron", "sans-serif"],
       },
+      screens: {
+        custom1350: "1350px",
+        custom975: "975px",
+      },
     },
   },
   plugins: [],
