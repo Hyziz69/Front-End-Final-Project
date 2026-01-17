@@ -1,13 +1,16 @@
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 const NavButton = ({
   text,
   primaryColor,
   secondaryColor,
+  link,
 }: {
   text: string;
   primaryColor: string;
   secondaryColor: string;
+  link: string;
 }) => {
   return (
     <motion.button
@@ -36,7 +39,7 @@ const NavButton = ({
         }}
         transition={{ duration: 0.4, ease: "easeInOut" }}
       >
-        {text}
+        <Link href={`/authorization/${link}`}>{text}</Link>
       </motion.span>
     </motion.button>
   );

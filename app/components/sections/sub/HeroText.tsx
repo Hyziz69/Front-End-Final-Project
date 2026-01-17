@@ -29,8 +29,8 @@ const HeroText = () => {
             {paragraphWords.map((word, key) => (
               <motion.span
                 key={key}
-                initial={{ opacity: 0, filter: "blur(12px)" }}
-                animate={{ opacity: 1, filter: "blur(0px)" }}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
                 transition={{
                   duration: 1,
                   ease: easeInOut,

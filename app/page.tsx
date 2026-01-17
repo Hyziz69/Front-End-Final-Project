@@ -3,6 +3,9 @@
 import Hero from "./components/sections/main/Hero";
 import Features from "./components/sections/main/Features";
 import Navbar from "./components/building-blocks/Navbar";
+import About from "./components/sections/main/About";
+import ReviewsSection from "./components/sections/main/ReviewsSection";
+import TechSpecsSection from "./components/sections/main/TechSpecsSection";
 
 export default function Home() {
   return (
@@ -10,8 +13,9 @@ export default function Home() {
       <Navbar />
       <Hero />
       <Features />
-      <section className="w-full min-h-screen bg-blue-200">About</section>
-      <section className="w-full min-h-screen bg-green-200">Projects</section>
+      <TechSpecsSection />
+      <ReviewsSection />
+      <About />
     </>
   );
 }

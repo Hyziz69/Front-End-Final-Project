@@ -6,7 +6,7 @@ import { useRef, useState } from "react";
 import * as THREE from "three";
 import H from "../../H";
 import { useWindowWidth } from "@/app/hooks/useWindowWidth";
-import { easeInOut, motion } from "framer-motion";
+import { easeOut, motion } from "framer-motion";
 
 const HeadphonesModel = () => {
   const ref = useRef<THREE.Group>(null);
@@ -17,11 +17,9 @@ const HeadphonesModel = () => {
     if (!ref.current) return;
 
     if (!isUserInteracting) {
-      // Auto-rotate when user isn’t dragging
-      ref.current.rotation.y += delta * 0.3; // smooth looping
+      ref.current.rotation.y += delta * 0.3;
       setTargetRotation(ref.current.rotation.y);
     } else {
-      // Smoothly blend back toward target rotation when released
       ref.current.rotation.y = THREE.MathUtils.lerp(
         ref.current.rotation.y,
         targetRotation,
@@ -56,11 +54,10 @@ export default function Headphones() {
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      transition={{ duration: 0.5, ease: easeInOut, delay: 0.9 }}
+      transition={{ duration: 1.2, ease: easeOut, delay: 2 }}
       className="w-[100%] lg:w-[40%] md:h-[700px] h-[350px] mt-10 lg:mt-0 overflow-hidden md:mr-5"
     >
       <Canvas className="!w-full !h-full">
-        {/* === LIGHTS === */}
         <directionalLight
           intensity={1.8}
           position={[2, 6, 4]}
@@ -102,8 +99,6 @@ export default function Headphones() {
         />
         <ambientLight intensity={0.6} />
         <Environment preset="city" />
-
-        {/* === MODEL === */}
         <mesh
           position={
             scale == 0.7
@@ -118,7 +113,6 @@ export default function Headphones() {
           <HeadphonesModel />
         </mesh>
 
-        {/* === CONTROLS === */}
         <OrbitControls
           ref={controlsRef}
           enableZoom={false}

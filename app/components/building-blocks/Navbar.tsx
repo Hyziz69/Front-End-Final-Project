@@ -8,29 +8,28 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="bg-[#050506] text-white w-full fixed top-0 z-50 shadow-md">
+    <nav className="bg-[#050506] text-white w-full fixed top-0 z-50 shadow-md pt-3">
       <div className="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
-        {/* Logo */}
         <div className="text-xl font-heading tracking-wide">SoundPulse</div>
 
-        {/* Desktop Links */}
         <div className="hidden md:flex gap-8">
-          <NavLink destination="About" />
-          <NavLink destination="Features" />
-          <NavLink destination="Pricing" />
+          <NavLink destination="about" />
+          <NavLink destination="help" />
+          <NavLink destination="pricing" />
         </div>
 
-        {/* Sign Up button (desktop only) */}
         <div className="hidden md:block">
           <NavButton
             text="Log in"
             primaryColor="#FFFFFF"
             secondaryColor="#1A1A1A"
+            link="login"
           />
           <NavButton
             text="Sign up"
             primaryColor="#FDD90B"
             secondaryColor="#000000"
+            link="register"
           />
         </div>
 

@@ -4,8 +4,7 @@ import { motion, easeOut } from "framer-motion";
 const FeatureBlock = ({
   id,
   imageSrc,
-  text,
-  reversed,
+  reversed = false,
 }: {
   id: number;
   imageSrc: string;
@@ -20,23 +19,40 @@ const FeatureBlock = ({
       whileInView={{ y: 0, opacity: 1, filter: "blur(0px)" }}
       viewport={{ once: true }}
       transition={{ duration: 1, ease: easeOut }}
-      className="w-[80%]  text-white flex mb-4 items-center p-5 mt-15"
-      style={{
-        flexDirection: reversed ? "row-reverse" : "row",
-        marginRight: reversed ? "0" : "6rem",
-      }}
+      className={`
+        w-full
+        flex
+        flex-col
+        lg:flex-row
+        ${reversed ? "lg:flex-row-reverse" : ""}
+        items-center
+        gap-10
+        py-10
+      `}
     >
       <img
-        src={"/images/" + imageSrc}
-        alt={imageSrc}
-        className="w-[350px] h-[330px]"
+        src={`/images/${imageSrc}`}
+        alt={feature.title}
+        className="
+          w-full
+          max-w-xs
+          sm:max-w-sm
+          lg:max-w-md
+          aspect-square
+          object-contain
+        "
       />
 
-      <div className="h-[120px] flex flex-col justify-between">
-        <h1 className="text-4xl text-[#FDD90B]">{feature.title}</h1>
-        <p className="text-lg">{feature.description}</p>
+      <div className="flex flex-col gap-4 text-center lg:text-left max-w-xl">
+        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-[#FDD90B]">
+          {feature.title}
+        </h2>
+        <p className="text-base sm:text-lg text-white/80">
+          {feature.description}
+        </p>
       </div>
     </motion.div>
   );
 };
+
 export default FeatureBlock;
