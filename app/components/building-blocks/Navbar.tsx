@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import NavLink from "../elements/NavLink";
 import NavButton from "../elements/NavButton";
+import NavbarAuth from "../elements/NavbarAuth";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -19,21 +20,9 @@ const Navbar = () => {
         </div>
 
         <div className="hidden md:block">
-          <NavButton
-            text="Log in"
-            primaryColor="#FFFFFF"
-            secondaryColor="#1A1A1A"
-            link="login"
-          />
-          <NavButton
-            text="Sign up"
-            primaryColor="#FDD90B"
-            secondaryColor="#000000"
-            link="register"
-          />
+          <NavbarAuth />
         </div>
 
-        {/* Burger Icon (mobile) */}
         <button
           className="md:hidden"
           onClick={() => setIsOpen(!isOpen)}
@@ -43,7 +32,6 @@ const Navbar = () => {
         </button>
       </div>
 
-      {/* Mobile dropdown */}
       {isOpen && (
         <div className="md:hidden bg-[#050506] border-t border-gray-800 py-4 space-y-4 flex flex-col items-center">
           <NavLink destination="About" />

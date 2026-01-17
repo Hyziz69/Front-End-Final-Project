@@ -6,11 +6,13 @@ const NavButton = ({
   primaryColor,
   secondaryColor,
   link,
+  onClick,
 }: {
   text: string;
   primaryColor: string;
   secondaryColor: string;
   link: string;
+  onClick?: () => {};
 }) => {
   return (
     <motion.button

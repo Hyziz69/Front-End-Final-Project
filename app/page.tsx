@@ -6,6 +6,7 @@ import Navbar from "./components/building-blocks/Navbar";
 import About from "./components/sections/main/About";
 import ReviewsSection from "./components/sections/main/ReviewsSection";
 import TechSpecsSection from "./components/sections/main/TechSpecsSection";
+import Footer from "./components/building-blocks/Footer";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       <TechSpecsSection />
       <ReviewsSection />
       <About />
+      <Footer />
     </>
   );
 }

@@ -2,6 +2,8 @@
 
 import { motion } from "framer-motion";
 import Navbar from "../components/building-blocks/Navbar";
+import { useCartStore } from "@/lib/store/cartStore";
+import Link from "next/link";
 
 const packages = [
   {
@@ -46,9 +48,12 @@ const packages = [
 ];
 
 const PricingPage = () => {
+  const addItem = useCartStore((state) => state.addItem);
+
   return (
     <>
       <Navbar />
+
       <div className="min-h-screen bg-[#050506] px-6 py-28">
         <div className="max-w-7xl mx-auto space-y-32">
           <motion.section
@@ -60,10 +65,13 @@ const PricingPage = () => {
             <a href="/" className="text-white ml-1">
               Go back
             </a>
+
             <span className="block h-1 w-20 bg-[#FDD90B] rounded-full mb-8" />
+
             <h1 className="text-5xl md:text-6xl font-semibold text-white mb-6">
               Choose your edition
             </h1>
+
             <p className="text-gray-400 text-lg max-w-xl">
               One-time purchase. Transparent pricing. No subscriptions.
             </p>
@@ -77,7 +85,7 @@ const PricingPage = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className={`relative rounded-3xl p-10 ${
+                className={`relative rounded-3xl p-10 flex flex-col ${
                   pkg.highlight
                     ? "bg-[#0E0E10] border border-[#FDD90B]/40"
                     : "bg-[#0E0E10] border border-white/10"
@@ -92,6 +100,7 @@ const PricingPage = () => {
                 <h2 className="text-2xl font-medium text-white mb-2">
                   {pkg.name}
                 </h2>
+
                 <p className="text-gray-400 mb-6">{pkg.description}</p>
 
                 <p className="text-4xl font-semibold text-white mb-8">
@@ -110,15 +119,28 @@ const PricingPage = () => {
                   ))}
                 </ul>
 
-                <button
-                  className={`w-full py-3 rounded-xl font-medium transition ${
-                    pkg.highlight
-                      ? "bg-[#FDD90B] text-black hover:bg-[#E6C200]"
-                      : "border border-white/10 text-white hover:bg-white/5"
-                  }`}
+                <Link
+                  href="/cart"
+                  className="mt-auto"
+                  onClick={() =>
+                    addItem({
+                      id: pkg.name.toLowerCase().replace(/\s+/g, "-"),
+                      name: pkg.name,
+                      price: parseInt(pkg.price),
+                      quantity: 1,
+                    })
+                  }
                 >
-                  Add to cart
-                </button>
+                  <button
+                    className={`w-full py-3 rounded-xl font-medium transition cursor-pointer ${
+                      pkg.highlight
+                        ? "bg-[#FDD90B] text-black hover:bg-[#E6C200]"
+                        : "border border-white/10 text-white hover:bg-white/5"
+                    }`}
+                  >
+                    Add to cart
+                  </button>
+                </Link>
               </motion.div>
             ))}
           </section>
