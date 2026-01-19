@@ -2,7 +2,6 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import NavLink from "../elements/NavLink";
-import NavButton from "../elements/NavButton";
 import NavbarAuth from "../elements/NavbarAuth";
 
 const Navbar = () => {

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Poppins, Orbitron } from "next/font/google";
 import "./globals.css";
-import Providers from "@/providers";
+// import Providers from "@/providers";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -25,7 +25,8 @@ export default function RootLayout({
   return (
     <html lang="en" className="antialiased">
       <body className="font-body overflow-x-hidden bg-[#050506]">
-        <Providers>{children}</Providers>
+        {/* <Providers>{children}</Providers> */}
+        {children}
       </body>
     </html>
   );
